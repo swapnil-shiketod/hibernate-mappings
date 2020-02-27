@@ -1,5 +1,8 @@
 package io.swapn.component;
 
+import java.io.BufferedReader;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
@@ -14,8 +17,7 @@ public class InsertTest {
 		JobType job=new JobType();
 		job.setJob("developer");
 		job.setSalary(70000);
-		job.setDepartment(101);
-		
+		job.setDepartment(101);  
 		Person person=new Person();
 		person.setPersonId(1001);
 		person.setPersonName("swapnil");
@@ -27,6 +29,7 @@ public class InsertTest {
 			session.save(person);
 			tx.commit();
 		}catch(Exception e){
+		
 			tx.rollback();
 		}
 		
